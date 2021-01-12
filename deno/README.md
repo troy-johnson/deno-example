@@ -14,7 +14,7 @@ A Node alternative with a focus on speed and security.
 | ES Modules | Supported <sup>6</sup>              | Babel Required | Deno             |
 
 
-<font size="2"> 
+<font size="1"> 
 
 1. You must explicity allow network/file/env access (e.g. deno run --allow-net example.ts for network requests).
 2. tsconfig.json is not required to start using typescript, but you can still add a config file if you prefer to
@@ -42,8 +42,11 @@ deno run https://deno.land/std/examples/welcome.ts
 // example.ts 
 
 import { serve } from "https://deno.land/std@0.83.0/http/server.ts";
+
 const s = serve({ port: 8000 });
+
 console.log("http://localhost:8000/");
+
 for await (const req of s) {
   req.respond({ body: "Hello World\n" });
 }
